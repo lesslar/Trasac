@@ -1,0 +1,122 @@
+*{
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+
+h1{ font-size: 3.5em;}
+h2{ font-size: 2.7em;}
+h3{ font-size: 2em;}
+p{ font-size: 1.25em;}
+ul{ list-style: none;}
+li{ font-size: 1.25em;}
+
+button{
+    font-size: 1.25em;
+    font-weight: bold;
+    padding: 10px 30px;
+    border-radius: 5px;
+    border: 2px solid rgba(0,0,0,0.3);
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    color: rgb(37, 101, 95);
+    background-color: rgb(0, 255, 255);
+}
+
+button:hover{
+    background-color: rgb(30, 194, 194);
+}
+
+
+.header{
+    background-color: rgb(255, 255, 255);
+    
+
+}
+
+.header a{
+    padding: 5px 12px;
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+
+.header a:hover{
+    color: #2565c1;
+}
+
+footer{
+    background-color: rgb(230,230,230);
+}
+
+footer p{
+    margin: 0;
+    padding: 12px;
+    color: rgb(100,100,100);
+}
+
+footer .container{
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.container{
+    display:flex;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.container div:last-child{
+    position: relative;
+    left: -12%;
+    display: flex;
+    align-items: center;
+}
+
+.productos, .destacado {
+    display: flex;
+    flex-wrap: wrap;
+}
+.card--container {
+    margin-top: 55px;
+    margin-left: 25px;
+    margin-right: 25px;
+    border:1px solid black;
+    text-align: center;
+    max-width: 150px;
+    min-width: 150px;
+}
+
+@media (min-width: 850px){
+    .header{
+        position: fixed;
+        width: 100%;
+    }
+
+    .header .container{
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .header nav{
+        flex-direction: row;
+        padding-bottom: 0;
+        padding-right: 20px;
+    }
+
+
+    footer .container{
+        justify-content: flex-end;
+    }
+}
+
+@media (min-width: 1200px) {
+    
+}

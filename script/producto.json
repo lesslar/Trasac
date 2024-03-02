@@ -1,0 +1,64 @@
+{
+    "categorias": [
+      {
+        "nombre": "Smartphones",
+        "productos": [
+          {
+            "nombre": "Samsung Galaxy S23 Ultra",
+            "precio": 149.990,
+            "destacados":true
+          },
+          {
+            "nombre": "iPhone 14 Pro Max",
+            "precio": 169.990,
+            "destacados":false
+          },
+          {
+            "nombre": "Xiaomi 13 Pro",
+            "precio": 129.990,
+            "destacados":false
+          }
+        ]
+      },
+      {
+        "nombre": "Computadoras portátiles",
+        "productos": [
+          {
+            "nombre": "MacBook Pro 14",
+            "precio": 249.990,
+            "destacados":true
+          },
+          {
+            "nombre": "Dell XPS 13 Plus",
+            "precio": 199.990,
+            "destacados":false
+          },
+          {
+            "nombre": "Lenovo ThinkPad X1 Carbon",
+            "precio": 179.990,
+            "destacados":false
+          }
+        ]
+      },
+      {
+        "nombre": "Televisores",
+        "productos": [
+          {
+            "nombre": "Samsung QLED 8K QN900B",
+            "precio": 499.990,
+            "destacados":true
+          },
+          {
+            "nombre": "LG OLED C2",
+            "precio": 349.990,
+            "destacados":false
+          },
+          {
+            "nombre": "Sony Bravia XR A80L",
+            "precio": 299.990,
+            "destacados":false
+          }
+        ]
+      }
+    ]
+  }
