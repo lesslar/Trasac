@@ -80,21 +80,30 @@ footer .container{
     align-items: center;
 }
 
+.container div:first-child{
+    /* position: relative;
+    left: -12%; */
+    display: flex;
+    align-items: left;
+}
+
 .productos, .destacado {
     display: flex;
     flex-wrap: wrap;
 }
 .card--container {
-    margin-top: 55px;
+    margin-top: 15px;
+    margin-bottom: 15px;
     margin-left: 25px;
     margin-right: 25px;
     border:1px solid black;
+    border-radius: 5%;
     text-align: center;
     max-width: 150px;
     min-width: 150px;
 }
 
-@media (min-width: 850px){
+@media (min-width: 900px){
     .header{
         position: fixed;
         width: 100%;
@@ -117,6 +126,11 @@ footer .container{
     }
 }
 
-@media (min-width: 1200px) {
-    
+@media (max-width: 899px) {
+    .container div:last-child{
+        position: relative;
+        left: 2%;
+        display: flex;
+        align-items: right;
+    }
 }
