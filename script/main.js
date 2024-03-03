@@ -8,6 +8,7 @@ const data = {
                     precio: 149990,
                     img: "https://tiendaonline.movistar.com.ar/media/catalog/product/cache/1d01ed3f1ecf95fcf479279f9ae509ad/s/2/s23_ultra_cream_frente_5.png",
                     destacados: true,
+                    precioDescuento: 10000 
                 },
                 {
                     nombre: "iPhone 14 Pro Max",
@@ -31,6 +32,7 @@ const data = {
                     precio: 249990,
                     img: "https://storecba.com/wp-content/uploads/2022/02/macbook-pro-14.png",
                     destacados: true,
+                    precioDescuento: 20000 
                 },
                 {
                     nombre: "Dell XPS 13 Plus",
@@ -54,6 +56,7 @@ const data = {
                     precio: 499990,
                     img: "https://www.reviews.org/app/uploads/2022/03/Samsung-QLED-2022-Header-300x158.png",
                     destacados: true,
+                    precioDescuento: 50000 
                 },
                 {
                     nombre: "LG OLED C2",
@@ -79,7 +82,9 @@ function getData() {
         cat.productos.map(pr => {
 
             if (pr.destacados) {
+                let desc= (pr.precioDescuento*100)/pr.precio;
                 document.querySelectorAll(".destacado")[0].innerHTML += `<div class='card--container'>
+                <div class="descuento">${Math.floor(desc)}% OFF</div>
             <div class='card--image'>
                 <img src=${pr.img} width='120px' height='120px'/>
             </div>
@@ -87,8 +92,9 @@ function getData() {
                 ${pr.nombre}
             </div>
             <div class='card--price'>
-                S/.${pr.precio}
+                S/${pr.precio - pr.precioDescuento}
             </div>
+            <s class='oldPrice'>S/${pr.precio}</s>
         </div>`;
             }
             else {
@@ -100,7 +106,7 @@ function getData() {
                 ${pr.nombre}
             </div>
             <div class='card--price'>
-                S/.${pr.precio}
+                S/${pr.precio}
             </div>
         </div>`;
             }
