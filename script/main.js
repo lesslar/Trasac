@@ -124,7 +124,54 @@ function getData() {
             }
 
         })
-    })
+    });
+
+    
+    if(document.querySelectorAll('.card--buttons') != null){
+        let btns = document.querySelectorAll('.card--buttons');
+
+        for (let ii = 0; ii < btns.length; ii++) {
+            btns[ii].addEventListener("click", (e)=>{
+                time = 2000;
+                let key = e.target.innerText.toLowerCase() == "comprar"
+                if(key){
+
+                    AlertSuccess("✅La compra ha sido exitosa", time, ".header--alert");
+                }
+                else{
+                    AlertSuccess("✅Se ha añadido al carrito exitosamente", time, ".header--alert-cart");
+                }
+            })
+        }
+    }
+}
+
+function AlertSuccess(text, time, id){
+    let before;
+    if( id != ".header--alert"){
+        before = document.querySelector('.header--alert-cart')
+    }
+    else{
+       before = document.querySelector('.header--alert')
+    }
+    
+    setTimeout(()=>{
+        before.animation = "success-hide 1s steps(300) normal"
+        before.opacity = "0";
+        before.right = "0%";
+    }, 10)
+
+    let alerting = document.querySelector(id);
+
+    alerting.innerText = text;
+    alerting.style.opacity = "1";
+    alerting.style.animation = "success 1s steps(300)"
+    
+    setTimeout(()=>{
+        alerting.style.animation = "success-hide 1s steps(300) normal"
+        alerting.style.opacity = "0";
+        alerting.style.right = "0%";
+    }, time)
 }
 
 getData();
