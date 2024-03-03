@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Anta&family=Kode+Mono:wght@400..700&display=swap');
+
 * {
     box-sizing: border-box;
 }
@@ -7,9 +9,11 @@ html {
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Anta', sans-serif;
     margin: 0;
-    background-color: rgb(246, 246, 246);
+    font-weight: 200;
+    font-style: normal;
+    font-size: 20px;
 }
 
 h1 {
@@ -122,6 +126,7 @@ button:hover {
     padding: 12px;
     cursor: pointer;
     transform: scale(0.99);
+    background-color: white;
 }
 
 .card--container:hover {
@@ -135,7 +140,7 @@ button:hover {
 }
 
 .card--name {
-    font-size: 14px;
+    font-size: 18px;
     max-height:50px;
     min-height:45px;
     text-align: center;
@@ -145,7 +150,7 @@ button:hover {
 }
 
 .card--price {
-    font-size: 18px;
+    font-size: 25px;
 }
 
 .card--buttons {
@@ -154,7 +159,7 @@ button:hover {
 }
 
 .oldPrice {
-    font-size: 12px;
+    font-size: 15px;
     text-align: left;
     display: flex;
     position: relative;
@@ -171,7 +176,7 @@ button:hover {
     position: relative;
     left: -10%;
     bottom: 5px;
-    width: 82px;
+    width: 102px;
     overflow: hidden;
     white-space: nowrap;
     padding-left: 5px;
