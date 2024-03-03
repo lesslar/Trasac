@@ -186,7 +186,7 @@ button:hover {
     display: flex;
     align-items: center;
     width: 260px;
-    position: absolute;
+    position: fixed;
     right: 0%;
     padding: 30px;
     border-top-left-radius: 10px;
