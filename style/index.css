@@ -231,17 +231,17 @@ footer {
     background-color: rgb(230, 230, 230);
 }
 
-footer p {
+footer {
     margin: 0;
-    padding: 12px;
+    padding: 22px;
     color: rgb(100, 100, 100);
 }
 
 footer .container {
-    height: 150px;
+    height: 50px;
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
     background-color: rgb(230, 230, 230);
 }
 
@@ -274,7 +274,7 @@ footer .container {
 
 
     footer .container {
-        justify-content: flex-end;
+        justify-content: center;
     }
 
 }

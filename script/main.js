@@ -190,3 +190,5 @@ async function AlertSuccess(text, time, id) {
 }
 
 getData();
+
+document.querySelector("#date").innerHTML += new Date().getFullYear().toString();
