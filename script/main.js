@@ -146,19 +146,28 @@ function getData() {
     }
 }
 
-function AlertSuccess(text, time, id){
+async function AlertSuccess(text, time, id){
     let before;
+    let after;
     if( id != ".header--alert"){
-        before = document.querySelector('.header--alert-cart')
+        before = document.querySelector('.header--alert-cart');
+        after = document.querySelector('.header--alert');
     }
     else{
-       before = document.querySelector('.header--alert')
+       before = document.querySelector('.header--alert');
+       after = document.querySelector('.header--alert-cart');
     }
     
-    setTimeout(()=>{
+    await setTimeout(()=>{
         before.animation = "success-hide 1s steps(300) normal"
         before.opacity = "0";
         before.right = "0%";
+    }, 10)
+
+    await setTimeout(()=>{
+        after.animation = "success-hide 1s steps(300) normal"
+        after.opacity = "0";
+        after.right = "0%";
     }, 10)
 
     let alerting = document.querySelector(id);
@@ -167,7 +176,7 @@ function AlertSuccess(text, time, id){
     alerting.style.opacity = "1";
     alerting.style.animation = "success 1s steps(300)"
     
-    setTimeout(()=>{
+    await setTimeout(()=>{
         alerting.style.animation = "success-hide 1s steps(300) normal"
         alerting.style.opacity = "0";
         alerting.style.right = "0%";
