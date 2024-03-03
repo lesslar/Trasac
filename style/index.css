@@ -135,6 +135,12 @@ button:hover {
 
 .card--name {
     font-size: 14px;
+    max-height:50px;
+    min-height:45px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .card--price {
@@ -268,5 +274,9 @@ footer .container {
 
     .section--container {
         padding-top: 20px;
+    }
+
+    .header .container{
+        flex-direction: column;
     }
 }
