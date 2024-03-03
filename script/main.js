@@ -8,7 +8,7 @@ const data = {
                     precio: 149990,
                     img: "https://tiendaonline.movistar.com.ar/media/catalog/product/cache/1d01ed3f1ecf95fcf479279f9ae509ad/s/2/s23_ultra_cream_frente_5.png",
                     destacados: true,
-                    precioDescuento: 10000 
+                    precioDescuento: 10000
                 },
                 {
                     nombre: "iPhone 14 Pro Max",
@@ -32,7 +32,7 @@ const data = {
                     precio: 249990,
                     img: "https://storecba.com/wp-content/uploads/2022/02/macbook-pro-14.png",
                     destacados: true,
-                    precioDescuento: 20000 
+                    precioDescuento: 20000
                 },
                 {
                     nombre: "Dell XPS 13 Plus",
@@ -56,7 +56,7 @@ const data = {
                     precio: 499990,
                     img: "https://www.reviews.org/app/uploads/2022/03/Samsung-QLED-2022-Header-300x158.png",
                     destacados: true,
-                    precioDescuento: 50000 
+                    precioDescuento: 50000
                 },
                 {
                     nombre: "LG OLED C2",
@@ -82,7 +82,7 @@ function getData() {
         cat.productos.map(pr => {
 
             if (pr.destacados) {
-                let desc= (pr.precioDescuento*100)/pr.precio;
+                let desc = (pr.precioDescuento * 100) / pr.precio;
                 document.querySelectorAll(".destacado")[0].innerHTML += `<div class='card--container'>
                 <div class="descuento">${Math.floor(desc)}% OFF</div>
             <div class='card--image'>
@@ -126,45 +126,51 @@ function getData() {
         })
     });
 
-    
-    if(document.querySelectorAll('.card--buttons') != null){
+
+    if (document.querySelectorAll('.card--buttons') != null) {
         let btns = document.querySelectorAll('.card--buttons');
 
         for (let ii = 0; ii < btns.length; ii++) {
-            btns[ii].addEventListener("click", (e)=>{
+            btns[ii].addEventListener("click", (e) => {
                 time = 2000;
                 let key = e.target.innerText.toLowerCase() == "comprar"
-                if(key){
+                if (key) {
 
-                    AlertSuccess("✅La compra ha sido exitosa", time, ".header--alert");
+                    AlertSuccess(`<span class="material-symbols-outlined">
+                                    done
+                                  </span>La compra ha sido exitosa`, 
+                                  time, ".header--alert");
                 }
-                else{
-                    AlertSuccess("✅Se ha añadido al carrito exitosamente", time, ".header--alert-cart");
+                else {
+                    AlertSuccess(`<span class="material-symbols-outlined">
+                                    done
+                                </span>Se ha añadido al carrito exitosamente`, 
+                                time, ".header--alert-cart");
                 }
             })
         }
     }
 }
 
-async function AlertSuccess(text, time, id){
+async function AlertSuccess(text, time, id) {
     let before;
     let after;
-    if( id != ".header--alert"){
+    if (id != ".header--alert") {
         before = document.querySelector('.header--alert-cart');
         after = document.querySelector('.header--alert');
     }
-    else{
-       before = document.querySelector('.header--alert');
-       after = document.querySelector('.header--alert-cart');
+    else {
+        before = document.querySelector('.header--alert');
+        after = document.querySelector('.header--alert-cart');
     }
-    
-    await setTimeout(()=>{
+
+    await setTimeout(() => {
         before.animation = "success-hide 1s steps(300) normal"
         before.opacity = "0";
         before.right = "0%";
     }, 10)
 
-    await setTimeout(()=>{
+    await setTimeout(() => {
         after.animation = "success-hide 1s steps(300) normal"
         after.opacity = "0";
         after.right = "0%";
@@ -172,11 +178,11 @@ async function AlertSuccess(text, time, id){
 
     let alerting = document.querySelector(id);
 
-    alerting.innerText = text;
+    alerting.innerHTML = text;
     alerting.style.opacity = "1";
     alerting.style.animation = "success 1s steps(300)"
-    
-    await setTimeout(()=>{
+
+    await setTimeout(() => {
         alerting.style.animation = "success-hide 1s steps(300) normal"
         alerting.style.opacity = "0";
         alerting.style.right = "0%";
