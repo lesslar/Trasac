@@ -19,25 +19,26 @@ ul{ list-style: none;}
 li{ font-size: 1.25em;}
 
 button{
-    font-size: 1.25em;
-    font-weight: bold;
-    padding: 10px 30px;
+    font-size: 18px;
+    font-weight: 550;
+    padding: 10px 10px;
     border-radius: 5px;
-    border: 2px solid rgba(0,0,0,0.3);
+    border: 2px solid #2565c1;
     box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
-    color: rgb(37, 101, 95);
-    background-color: rgb(0, 255, 255);
+    cursor: pointer;
+    background-color: #2565c1;
+    color:white;
 }
 
 button:hover{
-    background-color: rgb(30, 194, 194);
+    background-color: #2566c159;
+    color:black;
 }
 
 
 .header{
     background-color: rgb(255, 255, 255);
-    
-
+    z-index: 999;
 }
 
 .header a{
@@ -71,6 +72,7 @@ footer .container{
     display:flex;
     padding-top: 12px;
     padding-bottom: 12px;
+    background-color: white;
 }
 
 .container div:last-child{
@@ -90,10 +92,18 @@ footer .container{
 .productos, .destacado {
     display: flex;
     flex-wrap: wrap;
+    font-weight: 550;
 }
 
 .section--container{
     padding-top: 100px;
+}
+
+.section {
+    margin-left: 10px;
+    font-weight: 700;
+    margin-top: 15px;
+    margin-bottom: 8px;
 }
 
 .card--container {
@@ -101,19 +111,41 @@ footer .container{
     margin-bottom: 15px;
     margin-left: 25px;
     margin-right: 25px;
-    border:1px solid black;
+    border:1px solid rgb(176, 176, 176);
     border-radius: 5%;
-    max-width: 150px;
-    min-width: 150px;
+    max-width: 190px;
+    min-width: 190px;
     text-align: center;
     padding: 12px;
+    cursor:pointer;
+    transform: scale(0.99);
 }
-.section {
-    margin-left: 10px;
+.card--container:hover {
+    box-shadow: -5px 5px 20px rgba(0,0,0,0.3);
+    transform: scale(1.1);
+}
+.card--image{
+    border-bottom: 1px solid rgb(205, 205, 205);
+    margin-bottom: 10px;
+}
+.card--name{
+    font-size: 14px;
+}
+.card--price{
+    font-size: 18px;
+}
+.card--buttons{
+    margin-top:5px;
+    margin-bottom:5px;
 }
 
 .oldPrice{
     font-size: 12px;
+    text-align: left;
+    display: flex;
+    position: relative;
+    left: 14px;
+    color:rgb(86, 86, 86);
 }
 
 .descuento{
@@ -138,7 +170,6 @@ footer .container{
         width: 0;
     }
 }
-
 
 @media (min-width: 900px){
     .header{

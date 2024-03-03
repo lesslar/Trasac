@@ -91,10 +91,16 @@ function getData() {
             <div class='card--name'>
                 ${pr.nombre}
             </div>
+            <s class='oldPrice'>S/${pr.precio}</s>
             <div class='card--price'>
                 S/${pr.precio - pr.precioDescuento}
             </div>
-            <s class='oldPrice'>S/${pr.precio}</s>
+            <div>
+                <button class="card--buttons" >Comprar</button>
+            </div>
+            <div>
+                <button class="card--buttons" >Añadir al carrito</button>
+            </div>
         </div>`;
             }
             else {
@@ -108,14 +114,17 @@ function getData() {
             <div class='card--price'>
                 S/${pr.precio}
             </div>
+            <div>
+                <button class="card--buttons" >Comprar</button>
+            </div>
+            <div>
+                <button class="card--buttons" >Añadir al carrito</button>
+            </div>
         </div>`;
             }
 
         })
     })
-
-
-    console.log(data)
 }
 
 getData();
