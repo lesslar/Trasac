@@ -75,6 +75,38 @@ const data = {
     ],
 };
 
+function SearchResult(value) {
+
+    if (value != "" && value != undefined) {
+        document.querySelector(".section--container").innerHTML = `
+        <!-- productos -->
+        <div class="section">Productos</div>
+        <div class="productos">
+
+        </div>`;
+
+        getDataByValue(value);
+    }
+    else {
+        document.querySelector(".section--container").innerHTML = `<!-- destacados -->
+        <div class="section">Ofertas</div>
+        <div class="destacado">
+        </div>
+
+        <!-- productos -->
+        <div class="section">Productos</div>
+        <div class="productos">
+
+        </div>`;
+        getData();
+    }
+}
+
+document.querySelector("#search").addEventListener("change", (e) => {
+    SearchResult(e.target.value);
+})
+
+
 function getData() {
 
     data.categorias.map(cat => {
@@ -138,14 +170,91 @@ function getData() {
 
                     AlertSuccess(`<span class="material-symbols-outlined">
                                     done
-                                  </span>La compra ha sido exitosa`, 
-                                  time, ".header--alert");
+                                  </span>La compra ha sido exitosa`,
+                        time, ".header--alert");
                 }
                 else {
                     AlertSuccess(`<span class="material-symbols-outlined">
                                     done
-                                </span>Se ha añadido al carrito exitosamente`, 
-                                time, ".header--alert-cart");
+                                </span>Se ha añadido al carrito exitosamente`,
+                        time, ".header--alert-cart");
+                }
+            })
+        }
+    }
+}
+
+function getDataByValue(value) {
+
+    data.categorias.map(cat => {
+
+        cat.productos.map(pr => {
+            if (pr.nombre.toLowerCase().includes(value.toLowerCase())) {
+                if (pr.destacados) {
+                    let desc = (pr.precioDescuento * 100) / pr.precio;
+                    document.querySelectorAll(".productos")[0].innerHTML += `<div class='card--container'>
+                    <div class="descuento">${Math.floor(desc)}% OFF</div>
+                <div class='card--image'>
+                    <img src=${pr.img} width='120px' height='120px'/>
+                </div>
+                <div class='card--name'>
+                    ${pr.nombre}
+                </div>
+                <s class='oldPrice'>S/${pr.precio}</s>
+                <div class='card--price'>
+                    S/${pr.precio - pr.precioDescuento}
+                </div>
+                <div>
+                    <button class="card--buttons" >Comprar</button>
+                </div>
+                <div>
+                    <button class="card--buttons" >Añadir al carrito</button>
+                </div>
+            </div>`;
+                }
+                else {
+                    document.querySelectorAll('.productos')[0].innerHTML += `<div class='card--container'>
+                <div class='card--image'>
+                    <img src=${pr.img} width='120px' height='120px'/>
+                </div>
+                <div class='card--name'>
+                    ${pr.nombre}
+                </div>
+                <div class='card--price'>
+                    S/${pr.precio}
+                </div>
+                <div>
+                    <button class="card--buttons" >Comprar</button>
+                </div>
+                <div>
+                    <button class="card--buttons" >Añadir al carrito</button>
+                </div>
+            </div>`;
+                }
+            }
+        })
+    });
+
+
+    if (document.querySelectorAll('.card--buttons') != null) {
+        let btns = document.querySelectorAll('.card--buttons');
+
+        for (let ii = 0; ii < btns.length; ii++) {
+            btns[ii].addEventListener("click", (e) => {
+                time = 2000;
+                let key = e.target.innerText.toLowerCase() == "comprar"
+                if (key) {
+
+                    AlertSuccess(`<span class="material-symbols-outlined">
+                                    done
+                                  </span>La compra ha sido exitosa`,
+                        time, ".header--alert");
+                }
+                else {
+                    AlertSuccess(`<span class="material-symbols-outlined">
+                                    done
+                                </span>Se ha añadido al carrito exitosamente`,
+                        time, ".header--alert-cart");
                 }
             })
         }
@@ -192,3 +301,13 @@ async function AlertSuccess(text, time, id) {
 getData();
 
 document.querySelector("#date").innerHTML += new Date().getFullYear().toString();
+
+window.addEventListener("resize", ()=>{
+    if( innerWidth > 900){
+        document.querySelector("#categorias").innerText = "Categorias";
+    }
+    else{
+        document.querySelector("#categorias").innerText = "";
+        document.querySelector("#categorias").innerHTML = `<img src="./media/Recurso_4.svg" width="15px"/>`;
+    }
+});
