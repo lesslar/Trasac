@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Anta&family=Kode+Mono:wght@400..700&display=swap');
-
 * {
     box-sizing: border-box;
 }
@@ -9,11 +7,11 @@ html {
 }
 
 body {
-    font-family: 'Anta', sans-serif;
+    font-family: 'Monserrat', sans-serif;
     margin: 0;
-    font-weight: 200;
+    font-weight: normal;
     font-style: normal;
-    font-size: 20px;
+    font-size: 17px;
 }
 
 h1 {
@@ -38,6 +36,10 @@ ul {
 
 li {
     font-size: 1.25em;
+}
+
+nav {
+    display: flex;
 }
 
 button {
@@ -79,13 +81,46 @@ button:hover {
     padding-top: 12px;
     padding-bottom: 12px;
     background-color: white;
+    max-width: 96%;
 }
 
 .container div:last-child {
     position: relative;
-    left: -12%;
+    left: 5%;
     display: flex;
     align-items: center;
+    width: 95%;
+}
+
+.container div nav button {
+    position: relative;
+    left: 2%;
+    display: flex;
+    align-items: center;
+}
+
+.container div input {
+    border: 1px solid #17467f;
+    background-color: #17467f;
+    color: white;
+    border-radius: 18px;
+    padding: 12px;
+    width: 500px;
+}
+
+.container div input::placeholder {
+    color: rgba(255, 255, 255, 0.732);
+    cursor: pointer;
+}
+
+.container div input::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 30px;
+    width: 30px;
+    background-image: url("../media/closeSVG.svg");
+    background-size: 30px 30px;
+    cursor: pointer;
 }
 
 .container div:first-child {
@@ -93,6 +128,11 @@ button:hover {
     left: -12%; */
     display: flex;
     align-items: left;
+}
+
+.container img{
+    margin-left: 15px;
+    cursor: pointer;
 }
 
 .productos,
@@ -156,6 +196,8 @@ button:hover {
 .card--buttons {
     margin-top: 5px;
     margin-bottom: 5px;
+    font-size: 14px;
+    padding: 8px;
 }
 
 .oldPrice {
@@ -163,7 +205,7 @@ button:hover {
     text-align: left;
     display: flex;
     position: relative;
-    left: 35px;
+    left: 32px;
     color: rgb(86, 86, 86);
 }
 
@@ -174,9 +216,9 @@ button:hover {
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
     position: relative;
-    left: -7.5%;
-    bottom: 5px;
-    width: 102px;
+    left: -8%;
+    bottom: 2px;
+    width: 88px;
     overflow: hidden;
     white-space: nowrap;
     padding-left: 5px;
@@ -215,6 +257,23 @@ button:hover {
     transform: scale(2);
 }
 
+#categorias {
+    font-size: 12px;
+    font-weight: 500;
+    display: flex;
+    flex-direction: row;
+    background-color: #17467f;
+    border-color: #17467f;
+}
+
+#categorias img{
+    font-size: 12px;
+    font-weight: 500;
+    display: flex;
+    flex-direction: row;
+    margin-left: 1px;
+}
+
 @keyframes success {
     from {
         right: -100%;
@@ -245,6 +304,26 @@ footer .container {
     background-color: rgb(230, 230, 230);
 }
 
+.footer--content div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer--content div div {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+
+.footer--content div div div {
+    font-size: 12px;
+}
+
+.footer--content div div div:first-child {
+    font-size: 16px;
+}
+
 @media(min-width:1024px) {
 
     .header--alert,
@@ -252,6 +331,10 @@ footer .container {
         width: 460px;
         padding: 40px;
         font-size: 30px;
+    }
+
+    .container div input {
+        width: 500px;
     }
 }
 
@@ -277,6 +360,11 @@ footer .container {
         justify-content: center;
     }
 
+    .container div input {
+        width: 350px;
+        min-width: 90%;
+    }
+
 }
 
 @media (max-width: 899px) {
@@ -299,6 +387,58 @@ footer .container {
         position: relative;
         right: 20px;
         transform: scale(1.6);
+    }
+
+    .container div input {
+        width: 350px;
+        min-width: 80%;
+    }
+
+    .container div nav button {
+        font-size: 9px !important;
+        /* width: 165px; */
+        text-align: center;
+    }
+
+}
+
+@media (max-width: 603px) {
+
+    .container div nav button {
+        font-size: 9px !important;
+        /* width: 65px; */
+        text-align: center;
+    }
+
+    .container div input {
+        width: 150px;
+        min-width: 80%;
+    }
+
+    .footer--content div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-bottom: 12px;
+    }
+    .footer--content div div div {
+        margin-bottom: 0px;
+    }
+
+}
+
+
+@media (max-width: 399px) {
+
+    .container div nav button {
+        font-size: 9px !important;
+        /* width: 65px; */
+        text-align: center;
+    }
+
+    .container div input {
+        width: 50px;
+        min-width: 50%;
     }
 
 }
